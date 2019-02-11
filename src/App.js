@@ -43,7 +43,10 @@ state = {
 
    handleParkDelete = (id) => {
     const copyParks = this.state.parks.filter(park => park.id !== id)
-    this.setState({ parks: copyParks })
+    this.setState({
+      parks: copyParks,
+      searchedParks: copyParks,
+    })
    }
 
    //for searchBar

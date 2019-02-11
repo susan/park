@@ -6,8 +6,8 @@ class ParkCard extends Component {
 
    deletePark = (event) => {
     // console.log(event.target);
-    const id = this.props.park.id
-    fetch(`http://localhost:3001//api/v1/parks/${id}`, {
+    const id = (this.props.park.id)
+    fetch(`http://localhost:3000/api/v1/parks/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ class ParkCard extends Component {
       }
     })
     .then(resp => resp.json())
-    .then(data => this.props.handleCharacterDelete(id))
+    .then(data => this.props.handleParkDelete(id))
    }
 
 
@@ -27,8 +27,8 @@ class ParkCard extends Component {
 
 
   render() {
-    //   console.log("ParkCard props are", this.props)
-    // console.log("---")
+    console.log("ParkCard props are", this.props)
+    console.log("---")
     return (
       <div className="four wide column">
       <Card.Header >
