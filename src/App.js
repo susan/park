@@ -68,7 +68,7 @@ state = {
 
 
    handleBookMarked = (event, parkObj) => {
-     if (this.state.clicked) {
+
        let selectedPark = this.state.parks.find(park => {
           return park.id === parkObj.id
         })
@@ -77,7 +77,7 @@ state = {
           this.setState({
            bookmarkedParks: newBookmarked
         })
-      }
+
    }
 
 
