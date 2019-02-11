@@ -9,11 +9,11 @@ const ParkContainer= (props) => {
 
      let parkList = props.parks.map(park => {
         return <ParkCard key={park.id} park={park} handleParkDelete={props.handleParkDelete}
-        handleBookMarked={props.handleBookMarked}/>
+        handleBookMarked={props.handleBookMarked} showTextButton={props.showTextButton}/>
       })
 
     return (
-      <div className="two wide column">
+      <div className="four wide column">
 
       <Grid>
 

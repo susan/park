@@ -33,8 +33,6 @@ class ParkCard extends Component {
       <div className="ten wide column">
       <Card.Header >
 
-      {/*<Grid>
-       <Grid.Column width={10}>*/}
        {this.props.park.full_name}
        <Image  alt = "" src= {this.props.park.img1_url} />
 
@@ -46,8 +44,7 @@ class ParkCard extends Component {
        :
        (null)
        }
-       {/*</Grid.Column>
-       </*Grid> */}
+        <button class="large circular ui icon button">  <i class="icon settings">{this.props.showTextButton}</i> </button>
        </Card.Header>
       </div>
     )

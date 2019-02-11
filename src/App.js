@@ -94,6 +94,16 @@ state = {
 
    }
 
+   // showEditButton =() => {
+   //   return <Button> Edit </Button>
+   // }
+
+
+   // showDetailsButton = () => {
+   //    return <Button> Show website/Entrance fee </Button>
+
+   // }
+
 
 
     whichArrayToSendToParkContainer =() => {
@@ -110,15 +120,17 @@ state = {
     console.log("bookmarkedparks are", this.state.bookmarkedParks)
     return (
       <div className="App">
-      <NewForm handleNewParkSubmit={this.handleNewParkSubmit}/>
+      <NewForm handleParkSubmit={this.handleNewParkSubmit}/>
       <SearchForm handleSearch={this.handleSearch} searchTerm={this.state.searchTerm}/>
       <Grid>
       <div className="twelve wide column">
       < ParkContainer  parks={this.whichArrayToSendToParkContainer()} handleParkDelete={this.handleParkDelete}
-       handleBookMarked={this.addBookmarked} />
+       handleBookMarked={this.addBookmarked} showTextButton="Edit/More Details"/>
         </div>
        <div className="four wide column">
-       <BookmarkContainer  parks={this.state.bookmarkedParks} handleBookMarked={this.removeBookmarked} handleParkDelete={this.handleParkDelete}/>
+       <BookmarkContainer parks={this.state.bookmarkedParks}
+       handleBookMarked={this.removeBookmarked}
+       handleParkDelete={this.handleParkDelete} showTextButton="Website/Park Fee"/>
        </div>
      </Grid>
       </div>

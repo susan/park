@@ -32,7 +32,7 @@ class NewForm extends Component {
     body: JSON.stringify(this.state)
     })
    .then(resp => resp.json())
-   .then(data => this.props.handleNewParkSubmit(event, data))
+   .then(data => this.props.handleParkSubmit(event, data))
 
    this.setState({
      full_name: "",
@@ -64,11 +64,11 @@ class NewForm extends Component {
 
   	  <Form onSubmit={this.handleSubmit} >
           <Form.Group>
-          <Form.Input name="full_name" placeholder="Add a Park Name"
+          <Form.Input name="full_name" placeholder="Add/Edit Park Name"
             value={this.state.full_name} onChange={this.handleChange}/>
           <Form.Input  name="img1_url" placeholder="Web Address for Image"
             value={this.state.img1_url} onChange= {this.handleChange} />
-          <Button color='blue' floated = 'right' size= 'medium'>Submit New Park </Button>
+          <Button color='blue' floated = 'right' size= 'medium'>Submit Park </Button>
           </Form.Group>
        </Form>
   	)

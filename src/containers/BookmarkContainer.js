@@ -7,10 +7,10 @@ import { Button, Image, Card, Grid } from "semantic-ui-react";
 export default class BookmarkContainer extends Component {
 
     showBookmarked = () => {
-
   	    let parkList= this.props.parks.map(park => {
           return <ParkCard key={park.id} park={park} handleBookMarked={this.props.handleBookMarked}
-          handleParkDelete={this.props.handleParkDelete}/>
+          handleParkDelete={this.props.handleParkDelete}
+          showTextButton = {this.props.showTextButton}/>
         })
       return parkList
       //return <BookmarkCard  />
@@ -28,7 +28,7 @@ export default class BookmarkContainer extends Component {
         {/* this.props.parks
           ?*/}
       	{this.showBookmarked()}
-        {/*why doesn't this have {} around it, becvause egval whole expression
+        {/*why doesn't this have {} around it, because eval whole expression
         :
         (<div></div>)} */}
         </Grid>
