@@ -9,7 +9,7 @@ export default class BookmarkContainer extends Component {
     showBookmarked = () => {
 
   	    let parkList= this.props.parks.map(park => {
-          return <ParkCard key={park.id} park={park} />
+          return <ParkCard key={park.id} park={park} handleBookMarked={this.props.handleBookMarked} />
         })
       return parkList
       //return <BookmarkCard  />

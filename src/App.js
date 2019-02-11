@@ -16,7 +16,6 @@ state = {
   searchTerm: "",
   searchedParks: [],
   bookmarkedParks: [],
-  clicked: false,
 }
 
 
@@ -64,14 +63,8 @@ state = {
      })
    }
 
-   clickHandler = () => {
-     this.setState({
-     clicked: !this.state.clicked
-   })
-   }
 
-
-   handleBookMarked = (event, parkObj) => {
+   addBookmarked = (event, parkObj) => {
 
        let selectedPark = this.state.parks.find(park => {
           return park.id === parkObj.id
@@ -83,6 +76,22 @@ state = {
         })
 
    }
+
+  removeBookmarked = (event, parkObj) => {
+
+       let selectedPark = this.state.parks.find(park => {
+          return park.id === parkObj.id
+        })
+     //console.log("bookmarkthis", selectedPark)
+        let newBookmarked = [...this.state.bookmarkedParks].filter(park => {
+          return park.id !== parkObj.id
+        })
+          this.setState({
+           bookmarkedParks: newBookmarked
+        })
+
+   }
+
 
 
     whichArrayToSendToParkContainer =() => {
@@ -102,8 +111,8 @@ state = {
       <NewForm handleNewParkSubmit={this.handleNewParkSubmit}/>
       <SearchForm handleSearch={this.handleSearch} searchTerm={this.state.searchTerm}/>
       < ParkContainer  parks={this.whichArrayToSendToParkContainer()} handleParkDelete={this.handleParkDelete}
-       handleBookMarked={this.handleBookMarked} />
-       <BookmarkContainer  parks={this.state.bookmarkedParks}/>
+       handleBookMarked={this.addBookmarked} />
+       <BookmarkContainer  parks={this.state.bookmarkedParks} handleBookMarked={this.removeBookmarked}/>
 
       </div>
     );
