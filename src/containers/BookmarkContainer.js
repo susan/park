@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import BookmarkCard from "../components/ParkCard"
+import ParkCard from "../components/ParkCard"
 
 
 
@@ -9,7 +9,7 @@ export default class BookmarkContainer extends Component {
     showBookmarked = () => {
 
   	    let parkList= this.props.parks.map(park => {
-          return <BookmarkCard key={park.id} park={park} />
+          return <ParkCard key={park.id} park={park} />
         })
       return parkList
       //return <BookmarkCard  />
