@@ -75,12 +75,4 @@ class NewForm extends Component {
   }
 }
 
-
-
-
-
-
-
-
-
 export default NewForm;

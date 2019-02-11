@@ -1,23 +1,23 @@
 
 import React, { Component } from 'react';
+import { Button, Image, Card, Grid } from "semantic-ui-react";
 
 
-class BookmarkCard extends component{
+class BookmarkCard extends Component{
 
 	render(){
+      console.log("BookmarkCard props", this.props)
+      console.log("---")
 
-		return(
-      <div className="one wide column" float: right>
-      <Card.Header >
-
-      <Grid>
-       <Grid.Column width={2}>
-       {this.props.park.full_name}
-       <Image  alt = "" src= {this.props.park.img1_url} />
-			<h1>hi  </h1>
-
-			)
+	  return(
+         <div className="four wide column">
+         <Card.Header>
+          <div> Vehicle fee: ${this.props.park.vehicle_fee} </div>
+          <div> Directions: {this.props.park.directions_info}</div>
+          </Card.Header>
+          </div>
+	   )
 	}
 }
 
-export default Bookmark Card;
+export default BookmarkCard;

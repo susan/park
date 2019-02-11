@@ -40,6 +40,21 @@ state = {
     })
    }
 
+   handleEditSubmit=(event, editedPark) => {
+     const updatedArray = this.state.parks.map(park => {
+       if (park.id ===editedPark.id) {
+        return editedPark
+       }
+       else {
+        return park
+       }
+      })
+     this.setState
+     ({parks: updatedArray,
+      searchedParks: updatedArray,
+     })
+   }
+
    handleParkDelete = (id) => {
     const copyParks = this.state.parks.filter(park => park.id !== id)
     const copyBookmarked = this.state.bookmarkedParks.filter(park => park.id !== id)
@@ -73,6 +88,7 @@ state = {
         })
      //console.log("bookmarkthis", selectedPark)
         let newBookmarked = [...this.state.bookmarkedParks, selectedPark]
+        newBookmarked = [...new Set(newBookmarked)] //get rid of dupes
           this.setState({
            bookmarkedParks: newBookmarked
         })
@@ -125,7 +141,9 @@ state = {
       <Grid>
       <div className="twelve wide column">
       < ParkContainer  parks={this.whichArrayToSendToParkContainer()} handleParkDelete={this.handleParkDelete}
-       handleBookMarked={this.addBookmarked} showTextButton="Edit/More Details"/>
+       handleBookMarked={this.addBookmarked} showTextButton="Edit"
+       handleEditSubmit={this.handleEditSubmit}
+       />
         </div>
        <div className="four wide column">
        <BookmarkContainer parks={this.state.bookmarkedParks}

@@ -9,7 +9,9 @@ const ParkContainer= (props) => {
 
      let parkList = props.parks.map(park => {
         return <ParkCard key={park.id} park={park} handleParkDelete={props.handleParkDelete}
-        handleBookMarked={props.handleBookMarked} showTextButton={props.showTextButton}/>
+        handleBookMarked={props.handleBookMarked} showTextButton={props.showTextButton}
+        handleEditSubmit={props.handleEditSubmit}
+        />
       })
 
     return (
