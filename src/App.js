@@ -42,9 +42,11 @@ state = {
 
    handleParkDelete = (id) => {
     const copyParks = this.state.parks.filter(park => park.id !== id)
+    const copyBookmarked = this.state.bookmarkedParks.filter(park => park.id !== id)
     this.setState({
       parks: copyParks,
       searchedParks: copyParks,
+      bookmarkedParks: copyBookmarked,
     })
    }
 
@@ -112,7 +114,7 @@ state = {
       <SearchForm handleSearch={this.handleSearch} searchTerm={this.state.searchTerm}/>
       < ParkContainer  parks={this.whichArrayToSendToParkContainer()} handleParkDelete={this.handleParkDelete}
        handleBookMarked={this.addBookmarked} />
-       <BookmarkContainer  parks={this.state.bookmarkedParks} handleBookMarked={this.removeBookmarked}/>
+       <BookmarkContainer  parks={this.state.bookmarkedParks} handleBookMarked={this.removeBookmarked} handleParkDelete={this.handleParkDelete}/>
 
       </div>
     );
