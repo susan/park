@@ -65,7 +65,7 @@ class NewForm extends Component {
   	  <Form onSubmit={this.handleSubmit} >
           <Form.Group>
           <Form.Input name="full_name" placeholder="Add a Park Name"
-            value={this.state.name} onChange={this.handleChange}/>
+            value={this.state.full_name} onChange={this.handleChange}/>
           <Form.Input  name="img1_url" placeholder="Web Address for Image"
             value={this.state.img1_url} onChange= {this.handleChange} />
           <Button color='blue' floated = 'right' size= 'medium'>Submit New Park </Button>
