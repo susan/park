@@ -13,11 +13,16 @@ const ParkContainer= (props) => {
       })
 
     return (
-      <div className="Container">
+      <div className="two wide column">
 
-       {parkList}
+      <Grid>
+
+      {parkList}
+       </Grid>
 
       </div>
+
+
     );
 }
 

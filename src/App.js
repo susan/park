@@ -5,7 +5,7 @@ import ParkContainer from "./containers/ParkContainer"
 import BookmarkContainer from "./containers/BookmarkContainer"
 import SearchForm from "./components/SearchForm"
 import NewForm from "./components/NewForm"
-
+import { Button, Image, Card, Grid } from "semantic-ui-react";
 
 const parkURL = "http://localhost:3000/api/v1/parks"
 class App extends Component {
@@ -112,10 +112,15 @@ state = {
       <div className="App">
       <NewForm handleNewParkSubmit={this.handleNewParkSubmit}/>
       <SearchForm handleSearch={this.handleSearch} searchTerm={this.state.searchTerm}/>
+      <Grid>
+      <div className="twelve wide column">
       < ParkContainer  parks={this.whichArrayToSendToParkContainer()} handleParkDelete={this.handleParkDelete}
        handleBookMarked={this.addBookmarked} />
+        </div>
+       <div className="four wide column">
        <BookmarkContainer  parks={this.state.bookmarkedParks} handleBookMarked={this.removeBookmarked} handleParkDelete={this.handleParkDelete}/>
-
+       </div>
+     </Grid>
       </div>
     );
   }

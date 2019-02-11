@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import ParkCard from "../components/ParkCard"
-
+import { Button, Image, Card, Grid } from "semantic-ui-react";
 
 
 export default class BookmarkContainer extends Component {
@@ -9,7 +9,8 @@ export default class BookmarkContainer extends Component {
     showBookmarked = () => {
 
   	    let parkList= this.props.parks.map(park => {
-          return <ParkCard key={park.id} park={park} handleBookMarked={this.props.handleBookMarked} handleParkDelete={this.props.handleParkDelete}/>
+          return <ParkCard key={park.id} park={park} handleBookMarked={this.props.handleBookMarked}
+          handleParkDelete={this.props.handleParkDelete}/>
         })
       return parkList
       //return <BookmarkCard  />
@@ -20,13 +21,17 @@ export default class BookmarkContainer extends Component {
       console.log("--")
 
       return (
-        <div className="bookmark" >
+        <div className="Container">
+
+       <Grid>
+
         {/* this.props.parks
           ?*/}
       	{this.showBookmarked()}
         {/*why doesn't this have {} around it, becvause egval whole expression
         :
         (<div></div>)} */}
+        </Grid>
       	</div>
       )
     }

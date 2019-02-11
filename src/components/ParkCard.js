@@ -30,15 +30,15 @@ class ParkCard extends Component {
     console.log("ParkCard props are", this.props)
     console.log("---")
     return (
-      <div className="four wide column">
+      <div className="ten wide column">
       <Card.Header >
 
-      <Grid>
-       <Grid.Column width={10}>
+      {/*<Grid>
+       <Grid.Column width={10}>*/}
        {this.props.park.full_name}
        <Image  alt = "" src= {this.props.park.img1_url} />
 
-       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Bookmark for Continued Research </Button>
+       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Add/Remove Bookmark  </Button>
        {this.props.park.is_editable
        ?
        (<i className="ui blue trash alternate outline icon"
@@ -46,8 +46,8 @@ class ParkCard extends Component {
        :
        (null)
        }
-       </Grid.Column>
-       </Grid>
+       {/*</Grid.Column>
+       </*Grid> */}
        </Card.Header>
       </div>
     )
