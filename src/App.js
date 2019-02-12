@@ -148,7 +148,7 @@ state = {
        <div className="four wide column">
        <BookmarkContainer parks={this.state.bookmarkedParks}
        handleBookMarked={this.removeBookmarked}
-       handleParkDelete={this.handleParkDelete} showTextButton="Website/Park Fee"/>
+       handleParkDelete={this.handleParkDelete} showTextButton="Edit"/>
        </div>
      </Grid>
       </div>

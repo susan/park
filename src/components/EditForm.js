@@ -49,9 +49,11 @@ export default class EditForm extends Component {
      	 <div>
      	   {this.props.park.is_editable ?
            ( <Form onSubmit = {this.handleSubmit}>
-              <Form.Group>
-                 <Form.Input name="full_name" placeholder={this.props.park.full_name}
+              <Form.Group >
+
+                 <Form.Input  name="full_name" placeholder={this.props.park.full_name}
                   value={this.state.full_name} onChange={this.handleChange}/>
+
 
                  <Form.Input  name="img1_url" placeholder={this.props.park.im1_url}
                   value={this.state.img1_url} onChange={this.handleChange} />

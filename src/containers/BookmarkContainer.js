@@ -17,7 +17,7 @@ export default class BookmarkContainer extends Component {
      }
 
     render() {
-    	// console.log("bookmarkcontainer props are", this.props)
+    	// fconsole.log("bookmarkcontainer props are", this.props)
      //  console.log("--")
 
       return (

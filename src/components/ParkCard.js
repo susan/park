@@ -56,7 +56,7 @@ class ParkCard extends Component {
       <Card.Header >
        <div>{this.props.park.full_name}</div>
        <Image  alt = "" src= {this.props.park.img1_url} />
-       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Add/Remove Bookmark  </Button>
+       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Bookmark/More Details  </Button>
 
 
        {this.props.park.is_editable
