@@ -33,7 +33,7 @@ state = {
   handleNewParkSubmit=(event, park) => {
     //event.preventDefault()
     console.log("func to submit new park", park)
-    let copyParks = [...this.state.parks, park]
+    let copyParks = [park, ...this.state.parks]
     this.setState({
       parks: copyParks,
       searchedParks: copyParks,
