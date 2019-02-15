@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Button, Image, Card, Grid } from "semantic-ui-react";
 import EditForm from "./EditForm"
-import BookmarkCard from "./BookmarkCard"
+
 
 class ParkCard extends Component {
 
   state= {
    //bad practice to return edit form in function
    //pass around state which will then show the edit form
-  showEditForm: false,
-  showBookmarkDetails: false,
+  showEditForm: false
+
   }
 
 
@@ -32,10 +32,7 @@ class ParkCard extends Component {
       //console.log("is this working")
       this.props.handleBookMarked(event, this.props.park)
       //just passes up clicked obj
-      this.setState({
-        showBookmarkDetails: !this.state.showBookmarkDetails,
 
-       })
     }
 
     handleEdit = (event) => {
@@ -56,7 +53,7 @@ class ParkCard extends Component {
       <Card.Header >
        <div>{this.props.park.full_name}</div>
        <Image  alt = "" src= {this.props.park.img1_url} />
-       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Bookmark/More Details  </Button>
+       <Button className="ui brown basic button" onClick={this.bookmarkHandler} > Bookmark </Button>
 
 
        {this.props.park.is_editable
@@ -76,12 +73,6 @@ class ParkCard extends Component {
         {this.state.showEditForm
         &&
         (<EditForm  park={this.props.park} handleEditSubmit={this.props.handleEditSubmit} />)
-        }
-
-
-      {this.state.showBookmarkDetails
-        &&
-        (<BookmarkCard  park={this.props.park} />)
         }
 
 

@@ -12,8 +12,8 @@ class BookmarkCard extends Component{
 	  return(
          <div className="four wide column">
          <Card.Header>
-          <div> Vehicle fee: ${this.props.park.vehicle_fee} </div>
-          <div> Directions: {this.props.park.directions_info}</div>
+          <div> Vehicle fee: ${this.props.parkObj.vehicle_fee} </div>
+          <div> Directions: {this.props.parkObj.directions_info}</div>
           </Card.Header>
           </div>
 	   )
